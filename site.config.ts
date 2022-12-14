@@ -17,9 +17,10 @@ export default siteConfig({
   description: "Cuby team's notion page",
 
   // social usernames (optional)
-  twitter: 'cuby.world',
-  github: 'cuby.world',
-  linkedin: 'cuby.world',
+  twitter: 'cuby_world',
+  instagram: 'cuby_world',
+  // github: 'cuby.world',
+  // linkedin: 'cuby.world',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
