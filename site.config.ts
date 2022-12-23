@@ -1,6 +1,11 @@
-import { siteConfig } from './lib/site-config'
+import { SiteConfig, siteConfig } from './lib/site-config'
 
-export default siteConfig({
+type NotionPageType = 'hello' | 'studio' | 'team'
+
+const notionPageType: NotionPageType = process.env
+  .NOTION_PAGE_TYPE as NotionPageType
+
+const baseConfig: SiteConfig = {
   // the site's root Notion page (required)
   rootNotionPageId: 'dd4e4a0a7d1846d3ba20a46553e08395',
 
@@ -17,8 +22,8 @@ export default siteConfig({
   description: "Cuby team's notion page",
 
   // social usernames (optional)
-  twitter: 'cuby_world',
-  instagram: 'cuby_world',
+  // twitter: 'cuby_world',
+  // instagram: 'cuby_world',
   // github: 'cuby.world',
   // linkedin: 'cuby.world',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
@@ -63,4 +68,45 @@ export default siteConfig({
   //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
   //   }
   // ]
-})
+}
+
+const helloConfig = {
+  rootNotionPageId: 'dd4e4a0a7d1846d3ba20a46553e08395',
+  name: 'Cuby notion page',
+  domain: 'hello.cuby.world',
+  author: 'Cuby team',
+  description: "Cuby team's notion page",
+  twitter: 'cuby_world',
+  instagram: 'cuby_world'
+}
+
+const studioConfig = {
+  rootNotionPageId: '6e29514486dd4b1dac83d202b6ff0786',
+  name: 'CUBY STUDIO',
+  domain: 'studio.cuby.world'
+}
+
+const teamConfig = {
+  rootNotionPageId: '66e5a8fc71764ad4a3ebf6cfac77e9ac',
+  name: 'Cuby TEAM page',
+  domain: 'team.cuby.world'
+}
+
+// if notionPageType is hello, return baseConfig + helloConfig
+// if notionPageType is studio, return baseConfig + studioConfig
+// if notionPageType is team, return baseConfig + teamConfig
+// else return baseConfig
+const getSiteConfig: () => SiteConfig = () => {
+  switch (notionPageType) {
+    case 'hello':
+      return { ...baseConfig, ...helloConfig }
+    case 'studio':
+      return { ...baseConfig, ...studioConfig }
+    case 'team':
+      return { ...baseConfig, ...teamConfig }
+    default:
+      return baseConfig
+  }
+}
+
+export default siteConfig(getSiteConfig())
