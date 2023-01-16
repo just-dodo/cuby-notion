@@ -1,6 +1,6 @@
 import { SiteConfig, siteConfig } from './lib/site-config'
 
-type NotionPageType = 'hello' | 'studio' | 'team'
+type NotionPageType = 'hello' | 'studio' | 'team' | 'moozi-hello'
 
 const notionPageType: NotionPageType = process.env
   .NOTION_PAGE_TYPE as NotionPageType
@@ -92,6 +92,18 @@ const teamConfig = {
   domain: 'team.cuby.world'
 }
 
+const mooziHelloConfig = {
+  rootNotionPageId: 'ade9cc7027d844b28339178493c540bc',
+  name: 'Moozi notion page',
+  domain: 'hello.moozi.me',
+
+  author: 'Moozi team',
+
+  // open graph metadata (optional)
+  description: "Moozi team's notion page",
+
+}
+
 // if notionPageType is hello, return baseConfig + helloConfig
 // if notionPageType is studio, return baseConfig + studioConfig
 // if notionPageType is team, return baseConfig + teamConfig
@@ -104,6 +116,8 @@ const getSiteConfig: () => SiteConfig = () => {
       return { ...baseConfig, ...studioConfig }
     case 'team':
       return { ...baseConfig, ...teamConfig }
+    case 'moozi-hello':
+      return { ...baseConfig, ...mooziHelloConfig }
     default:
       return baseConfig
   }
