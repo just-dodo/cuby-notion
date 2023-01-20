@@ -1,0 +1,39 @@
+{
+  "name": "Moozi Notion page",
+  "short_name": "Moozi notion",
+  "icons": [
+
+    {
+      "src": "/moozi/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/moozi/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/moozi/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "180x180"
+    },    {
+      "src": "/moozi/favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/moozi/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/moozi/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "any"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone"
+}

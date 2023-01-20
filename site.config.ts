@@ -20,6 +20,7 @@ const baseConfig: SiteConfig = {
 
   // open graph metadata (optional)
   description: "Cuby team's notion page",
+  manifest:'/cuby/manifest.json',
 
   // social usernames (optional)
   // twitter: 'cuby_world',
@@ -101,6 +102,8 @@ const mooziHelloConfig = {
 
   // open graph metadata (optional)
   description: "Moozi team's notion page",
+  manifest:'/moozi/manifest.json',
+
 
 }
 

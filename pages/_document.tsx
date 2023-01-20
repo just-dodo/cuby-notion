@@ -3,6 +3,8 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 import { IconContext } from '@react-icons/all-files'
 
+import { manifest } from '@/lib/config'
+
 export default class MyDocument extends Document {
   render() {
     return (
@@ -17,7 +19,7 @@ export default class MyDocument extends Document {
               href='favicon.png'
             />
 
-            <link rel='manifest' href='/manifest.json' />
+            <link rel='manifest' href={manifest} />
           </Head>
 
           <body>
