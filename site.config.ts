@@ -1,6 +1,6 @@
 import { SiteConfig, siteConfig } from './lib/site-config'
 
-type NotionPageType = 'hello' | 'studio' | 'team' | 'moozi-hello' | 'just-dodo'  
+type NotionPageType = 'hello' | 'studio' | 'team' | 'moozi-hello' | 'just-dodo'
 
 const notionPageType: NotionPageType = process.env
   .NOTION_PAGE_TYPE as NotionPageType
@@ -12,15 +12,15 @@ const baseConfig: SiteConfig = {
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
+  author: 'team',
 
   // basic site info (required)
   name: 'Cuby notion page',
   domain: 'notion.cuby.world',
-  author: 'Cuby team',
 
   // open graph metadata (optional)
   description: "Cuby team's notion page",
-  manifest:'/cuby/manifest.json',
+  manifest: '/cuby/manifest.json',
 
   // social usernames (optional)
   // twitter: 'cuby_world',
@@ -84,13 +84,17 @@ const helloConfig = {
 const studioConfig = {
   rootNotionPageId: '6e29514486dd4b1dac83d202b6ff0786',
   name: 'CUBY STUDIO',
-  domain: 'studio.cuby.world'
+  domain: 'studio.cuby.world',
+
+  author: 'Cuby team'
 }
 
 const teamConfig = {
   rootNotionPageId: '66e5a8fc71764ad4a3ebf6cfac77e9ac',
   name: 'Cuby TEAM page',
-  domain: 'team.cuby.world'
+  domain: 'team.cuby.world',
+
+  author: 'Cuby team'
 }
 
 const mooziHelloConfig = {
@@ -102,20 +106,17 @@ const mooziHelloConfig = {
 
   // open graph metadata (optional)
   description: "Moozi team's notion page",
-  manifest:'/moozi/manifest.json',
-
-
+  manifest: '/moozi/manifest.json'
 }
 const justDodoConfig = {
   rootNotionPageId: '9dc14d5460f7492888b4c6bb3b4d42fe',
   name: 'Just-dodo notion page',
   domain: 'just-dodo.xyz',
-
   author: 'just-dodo',
 
   // open graph metadata (optional)
   description: "just-dodo's notion page",
-  manifest:'/just-dodo/manifest.json',
+  manifest: '/just-dodo/manifest.json'
 }
 
 // if notionPageType is hello, return baseConfig + helloConfig
