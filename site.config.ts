@@ -1,6 +1,6 @@
 import { SiteConfig, siteConfig } from './lib/site-config'
 
-type NotionPageType = 'hello' | 'studio' | 'team' | 'moozi-hello'
+type NotionPageType = 'hello' | 'studio' | 'team' | 'moozi-hello' | 'just-dodo'  
 
 const notionPageType: NotionPageType = process.env
   .NOTION_PAGE_TYPE as NotionPageType
@@ -106,6 +106,17 @@ const mooziHelloConfig = {
 
 
 }
+const justDodoConfig = {
+  rootNotionPageId: '9dc14d5460f7492888b4c6bb3b4d42fe',
+  name: 'Just-dodo notion page',
+  domain: 'just-dodo.xyz',
+
+  author: 'just-dodo',
+
+  // open graph metadata (optional)
+  description: "just-dodo's notion page",
+  manifest:'/just-dodo/manifest.json',
+}
 
 // if notionPageType is hello, return baseConfig + helloConfig
 // if notionPageType is studio, return baseConfig + studioConfig
@@ -121,6 +132,8 @@ const getSiteConfig: () => SiteConfig = () => {
       return { ...baseConfig, ...teamConfig }
     case 'moozi-hello':
       return { ...baseConfig, ...mooziHelloConfig }
+    case 'just-dodo':
+      return { ...baseConfig, ...justDodoConfig }
     default:
       return baseConfig
   }
