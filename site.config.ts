@@ -109,7 +109,7 @@ const mooziHelloConfig = {
 const justDodoConfig = {
   rootNotionPageId: '9dc14d5460f7492888b4c6bb3b4d42fe',
   name: 'Just-dodo notion page',
-  domain: 'just-dodo.xyz',
+  domain: 'callmejustdodo.com',
   author: 'just-dodo',
 
   // open graph metadata (optional)

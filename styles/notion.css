@@ -263,14 +263,6 @@
 
   background-color: none;
 
-  /* light yellow */
-  background-image: linear-gradient(
-    119deg,
-    var(--bg-color),
-    #fff697 10.5%,
-    #fdf59d 85.29%,
-    var(--bg-color)
-  );
 }
 
 .notion-purple_background,
@@ -285,8 +277,7 @@
   );
 }
 
-.notion-blue_background,
-.notion-gray_background {
+.notion-blue_background {
   /* light blue */
   background-image: linear-gradient(
     119deg,
@@ -295,6 +286,11 @@
     #adebfd 85.29%,
     var(--bg-color)
   );
+}
+
+.notion-gray_background {
+  /* light blue */
+  background-color: #f0f0f0;
 }
 
 .notion-red_background,
@@ -400,6 +396,14 @@
   color: var(--fg-color-2);
 }
 
-.notion-equation.notion-equation-block{
+.notion-equation.notion-equation-block {
   align-items: center;
+}
+
+.notion-simple-table tr:first-child td {
+  background: none;
+}
+
+.notion-hr {
+  margin: 0 !important;
 }
